@@ -4,7 +4,7 @@ import numpy as np
 from utils import text_to_sequence
 
 
-def synthesis(model, text, device, length_coef=1.0, pitch_coef=1.0, energy_coef=1.0):
+def synthesize(model, text, device, length_coef=1.0, pitch_coef=1.0, energy_coef=1.0):
     text = np.array(text)
     text = np.stack([text])
     src_pos = np.array([i+1 for i in range(text.shape[1])])
