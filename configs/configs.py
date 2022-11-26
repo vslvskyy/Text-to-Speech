@@ -52,8 +52,8 @@ class TrainConfig:
     checkpoint_path = "./model_new"
     logger_path = "./logger"
     mel_ground_truth = "./mels"
-    pitch_ground_truth = "/content/drive/MyDrive/tts(dla_hw)/ljspeech_preprocessed_pitches.npy"
-    energy_ground_truth = "/content/drive/MyDrive/tts(dla_hw)/ljspeech_energies.npy"
+    pitch_ground_truth = "./ljspeech_preprocessed_pitches.npy"
+    energy_ground_truth = "./ljspeech_energies.npy"
     alignment_path = "./alignments"
     data_path = "./data/train.txt"
     wavs_path = "./data/LJSpeech-1.1/wavs"
@@ -61,7 +61,7 @@ class TrainConfig:
     sample_rate = 22050
     n_fft = 1024
 
-    wandb_project = 'fastspeech_example'
+    wandb_project = 'fastspeech2'
 
     text_cleaners = ['english_cleaners']
 
