@@ -1,5 +1,6 @@
 import os
 import time
+from tqdm import tqdm
 
 import torch
 import numpy as np
@@ -25,7 +26,7 @@ def get_data_to_buffer(train_config):
     energies = torch.load(train_config.energy_ground_truth)
 
     start = time.perf_counter()
-    for i in range(len(text)):
+    for i in tqdm(range(len(text))):
         mel_gt_name = os.path.join(
             train_config.mel_ground_truth, "ljspeech-mel-%05d.npy" % (i+1))
         mel_gt_target = np.load(mel_gt_name)
