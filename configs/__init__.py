@@ -1,4 +1,4 @@
-from configs import TrainConfig, FastSpeechConfig, MelSpectrogramConfig
+from .configs import TrainConfig, FastSpeechConfig, MelSpectrogramConfig
 
 all = [
     TrainConfig,

@@ -1,7 +1,9 @@
 import torch
 import torch.nn as nn
 
-from modules import Encoder, Decoder, VarianceAdaptor
+from decoder import Decoder
+from encoder import Encoder
+from variance_adaptor import VarianceAdaptor
 
 from utils import get_mask_from_lengths
 
