@@ -5,7 +5,7 @@ import tqdm
 import torch
 import numpy as np
 
-from text_utils import text_to_sequence
+from .text_utils import text_to_sequence
 from other_utils import (
     process_text,
     pad_1D_tensor,
