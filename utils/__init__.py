@@ -1,5 +1,5 @@
 from .dataset_utils import get_data_to_buffer, reprocess_tensor, collate_fn_tensor
-from text_utils import text_to_sequence
+from .text_utils import text_to_sequence
 from .modules_utils import Transpose
 from .other_utils import (
     get_WaveGlow,
