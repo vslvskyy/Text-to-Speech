@@ -27,8 +27,7 @@
 import os
 from scipy.io.wavfile import write
 import torch
-from waveglow.mel2samp import files_to_list, MAX_WAV_VALUE
-# from denoiser import Denoiser
+from waveglow.mel2samp import MAX_WAV_VALUE
 
 
 def inference(mel, waveglow, audio_path, sigma=1.0, sampling_rate=22050):

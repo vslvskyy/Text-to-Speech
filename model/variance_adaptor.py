@@ -13,6 +13,7 @@ class LengthRegulator(nn.Module):
 
     def __init__(self, model_config: FastSpeechConfig, train_config: TrainConfig):
         super().__init__()
+        
         self.duration_predictor = FeaturePredictor(model_config)
         self.device = train_config.device
 

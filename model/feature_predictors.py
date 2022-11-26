@@ -7,7 +7,7 @@ class FeaturePredictor(nn.Module):
     """ Duration/Energy Predictor """
 
     def __init__(self, model_config: FastSpeechConfig):
-        super(FeaturePredictor, self).__init__()
+        super().__init__()
 
         self.input_size = model_config.encoder_dim
         self.filter_size = model_config.duration_predictor_filter_size
@@ -50,7 +50,7 @@ class FeaturePredictor(nn.Module):
 
 class PitchSpectrogramPredictor(nn.Module):
     def __init__(self, model_config: FastSpeechConfig):
-        super(PitchSpectrogramPredictor, self).__init__()
+        super().__init__()
 
         self.input_size = model_config.encoder_dim
         self.filter_size = model_config.duration_predictor_filter_size
@@ -94,7 +94,7 @@ class PitchSpectrogramPredictor(nn.Module):
 
 class PitchMeanStdPredictor(nn.Module):
     def __init__(self, model_config):
-        super(PitchMeanStdPredictor, self).__init__()
+        super().__init__()
 
         self.projector = nn.Sequential(
             nn.Linear(model_config.encoder_dim, model_config.encoder_dim),
