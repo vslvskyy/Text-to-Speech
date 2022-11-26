@@ -1,0 +1,14 @@
+librosa == 0.7.2
+numpy == 1.19.0
+pyworld == 0.2.10
+pycwt
+scipy == 1.5.0
+torchaudio
+torch == 1.13.0
+tqdm==4.46.1
+unidecode == 1.1.1
+inflect
+# hparams
+wandb
+
+
