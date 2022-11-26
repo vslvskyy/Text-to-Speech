@@ -1,8 +1,8 @@
-from dataset_utils import get_data_to_buffer, reprocess_tensor, collate_fn_tensor
+from .dataset_utils import get_data_to_buffer, reprocess_tensor, collate_fn_tensor
 
-from modules_utils import Transpose
+from .modules_utils import Transpose
 
-from other_utils import (
+from .other_utils import (
     get_WaveGlow,
     create_alignment,
     get_non_pad_mask,
