@@ -1,8 +1,8 @@
 import os
-import tqdm
 import torch
 import librosa
 
+from tqdm import tqdm
 from configs import TrainConfig
 
 

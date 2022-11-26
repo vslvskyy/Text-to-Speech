@@ -1,6 +1,5 @@
 import os
 import tqdm
-import torch
 import pyworld
 import librosa
 import numpy as np
