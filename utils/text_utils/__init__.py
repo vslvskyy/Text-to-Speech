@@ -1,6 +1,6 @@
 """ from https://github.com/keithito/tacotron """
 import re
-from text_utils import cleaners
+from . import cleaners
 from .symbols import symbols
 
 
