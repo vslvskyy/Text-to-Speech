@@ -1,6 +1,6 @@
 import torch.nn as nn
 
-from transformer_block import FFTBlock
+from .transformer_block import FFTBlock
 
 from utils import get_attn_key_pad_mask, get_non_pad_mask
 
@@ -9,7 +9,7 @@ class Decoder(nn.Module):
     """ Decoder """
 
     def __init__(self, model_config):
-        super(Decoder, self).__init__()
+        super().__init__()
 
         self.pad = model_config.PAD
 
@@ -24,6 +24,7 @@ class Decoder(nn.Module):
         )
 
         self.layer_stack = nn.ModuleList([FFTBlock(
+            model_config,
             model_config.encoder_dim,
             model_config.encoder_conv1d_filter_size,
             model_config.encoder_head,

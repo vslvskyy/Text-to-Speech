@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from feature_predictors import FeaturePredictor
+from .feature_predictors import FeaturePredictor
 
 from utils import create_alignment
 from configs import FastSpeechConfig, TrainConfig, MelSpectrogramConfig
@@ -12,7 +12,7 @@ class LengthRegulator(nn.Module):
     """Length Regulator"""
 
     def __init__(self, model_config: FastSpeechConfig, train_config: TrainConfig):
-        super(LengthRegulator, self).__init__()
+        super().__init__()
         self.duration_predictor = FeaturePredictor(model_config)
         self.device = train_config.device
 
@@ -50,15 +50,20 @@ class LengthRegulator(nn.Module):
 
 class VarianceAdaptor(nn.Module):
     """Variance Adaptor"""
-    
-    def __init__(self, model_config: FastSpeechConfig, melspec_config: MelSpectrogramConfig):
-        super(VarianceAdaptor, self).__init__()
+
+    def __init__(
+        self,
+        model_config: FastSpeechConfig,
+        train_config: TrainConfig,
+        melspec_config: MelSpectrogramConfig
+    ):
+        super().__init__()
 
         self.pitch_predictor = FeaturePredictor(model_config)
         # self.pitch_spec_predictor = PitchSpectrogramPredictor(model_config)
         # self.pitch_stats_predictor = PitchMeanStdPredictor(model_config)
         self.energy_predictor = FeaturePredictor(model_config)
-        self.length_regulator = LengthRegulator(model_config)
+        self.length_regulator = LengthRegulator(model_config, train_config)
 
         self.pitch_embedding = nn.Embedding(256, model_config.encoder_dim)
         self.energy_embedding = nn.Embedding(256, model_config.encoder_dim)

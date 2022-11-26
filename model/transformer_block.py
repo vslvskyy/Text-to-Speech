@@ -111,18 +111,19 @@ class FFTBlock(torch.nn.Module):
     """Feed-Forward Transformer Block"""
 
     def __init__(self,
+                 model_config,
                  d_model,
                  d_inner,
                  n_head,
                  d_k,
                  d_v,
                  dropout=0.1):
-        super(FFTBlock, self).__init__()
+        super().__init__()
         self.slf_attn = MultiHeadAttention(
             n_head, d_model, d_k, d_v, dropout=dropout)
         self.layer_norm = nn.LayerNorm(d_model)
         self.pos_ffn = PositionwiseFeedForward(
-            d_model, d_inner, dropout=dropout)
+            d_model, d_inner, model_config, dropout=dropout)
 
     def forward(self, enc_input, non_pad_mask=None, slf_attn_mask=None):
         fft_output = self.layer_norm(enc_input)
