@@ -34,18 +34,9 @@ $(wget --quiet --save-cookies /tmp/cookies.txt \
 ```
 
 ```python
-import torch
-from model import FastSpeech2
-from utils import get_WaveGlow
-from configs import MelSpectrogramConfig, FastSpeechConfig, TrainConfig
-
-
 mel_config = MelSpectrogramConfig()
 model_config = FastSpeechConfig()
 train_config = TrainConfig()
-
-WaveGlow = get_WaveGlow()
-WaveGlow = WaveGlow.cuda()
 
 model = FastSpeech2(model_config, train_config, mel_config)
 model = model.to(train_config.device)
