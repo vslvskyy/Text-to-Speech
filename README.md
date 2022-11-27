@@ -14,8 +14,7 @@ You can find generated examples with target phrase
 in `example` directory.
 
 ## Test Model
-You may use `fastspeech2_test.ipynb` file to test the model. You need to download it and to run the cells one by one 
-(change test texts in the punultimate cell needed).
+You may use `fastspeech2_test.ipynb` file to test the model. You need to download it and to run the cells one by one. Change test texts in the punultimate cell if needed.
 
 ## Trainig
 Training pipeline is avaliable at `fastspeech2_train.ipynb`.
