@@ -19,7 +19,7 @@ You may use `fastspeech2_test.ipynb` file to test the model. You need to downloa
 ## Trainig
 Training pipeline is avaliable at `fastspeech2_train.ipynb`.
 
-## Model Installation
+## Model Weights
 You can download model weights with the following code:
 
 ```shell
